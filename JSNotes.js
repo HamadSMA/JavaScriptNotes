@@ -1,5 +1,101 @@
 "use strict";
 
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-STRINGS CHEAT SHEET-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+charAt();
+concat();
+indexOf();
+lastIndexOf();
+split(); //  split a string into an array at a specified location
+toUpperCase();
+toLowerCase();
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-ARRAYS CHEAT SHEETR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+push(); // To add new items to an array
+pop(); // remove last item from an array
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-MATH CHEAT SHEETR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+Math.PI; // pi
+Math.E; //Euler's constant
+Math.LN2; // natural log of 2
+Math.random(); // generates a random number between 0 and 1.0
+Math.ceil(); //rounds up to the closest integer
+Math.floor(); // rounds down to the closest integer
+Math.round(); // rounds up to the closest integer if the decimal is .5 or above; otherwise, rounds down to the closest integer
+Math.trunc(); // trims the decimal, leaving only the integer
+Math.pow(2, 3); // calculates the number 2 to the power of 3, the result is 8
+Math.sqrt(16); // calculates the square root of 16, the result is 4
+Math.cbrt(8); // finds the cube root of 8, the result is 2
+Math.abs(-10); // returns the absolute value, the result is 10
+Math.log(); // logrithmic method
+Math.log2(); // logrithmic method
+Math.log10(); // logrithmic method
+Math.min(9, 8, 7); // returns 7
+Math.max(9, 8, 7); // returns 9.
+Math.sin(), Math.cos(), Math.tan(); // trignomatrics
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-CONDITIONALS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+//If else statements
+var age = 18;
+if (age >= 65) {
+  console.log("you get your income from pension");
+} else if (age < 65 && age >= 18) {
+  console.log("Each month you get a salary");
+} else if (age < 18) {
+  console.log("You get an allowance");
+} else {
+  console.log("The value of the age is not numerical");
+}
+
+// Switch statements
+var day = "Sunday";
+switch (day) {
+  case "Monday":
+    console.log("Do thing 1");
+    break;
+  case "Tuesday":
+    console.log("Do thing 2");
+    break;
+  case "Wednesday":
+    console.log("Do thing 3");
+    break;
+  case "Thursday":
+    console.log("Do thing 4");
+    break;
+  case "Friday":
+    console.log("Do thing 5");
+    break;
+  case "Saturday":
+    console.log("Do thing 6");
+    break;
+  case "Sunday":
+    console.log("Do thing 7");
+    break;
+  default:
+    console.log("Don't do");
+    break;
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-LOOPS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+// foor loop (variable; condition; increament)
+for (let i = 1; i < 4; i++) {
+  console.log(i);
+}
+console.log("Go!");
+
+// while loop
+// the variable is outside the loop and the increament is after it
+let i = 1;
+while (i < 4) {
+  console.log(i);
+  i++;
+}
+console.log("Go!");
+
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-FUNCTIONS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
 // function declaration.
@@ -194,3 +290,71 @@ hamadObject1.getSumary();
 //     `${mark.fullName}'s BMI(${mark.bmi}) is heighr than ${john.fullName}'s (${john.bmi})`
 //   );
 // }
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-MORE ON LOOPS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+//creating an object
+const hamadArray = [
+  "Hamad",
+  2030 - 1987,
+  "Developer",
+  ["Ahmed", "Mohammed", "Majed"],
+];
+
+//loop through an object
+for (let i = 0; i < hamadArray.length; i++) {
+  console.log(hamadArray[i], typeof hamadArray[i]);
+}
+
+//filling a new array with the type of each array element from hamadArray
+const types = [];
+for (let i = 0; i < hamadArray.length; i++) {
+  types[i] = typeof hamadArray[i];
+}
+console.log(types);
+
+// or we could do it using the push method
+for (let i = 0; i < hamadArray.length; i++) {
+  types.push(typeof hamadArray[i]);
+}
+console.log(types);
+
+// using +++continue++++ and ++++break+++ in loops
+
+// continue will skip one cycle of  condition is not met
+for (let i = 0; i < hamadArray.length; i++) {
+  if (typeof hamadArray[i] !== "string") continue;
+  console.log([hamadArray[i]], typeof hamadArray[i]);
+}
+
+// break will end the loop completely
+for (let i = 0; i < hamadArray.length; i++) {
+  if (typeof hamadArray[i] === "number") break;
+  console.log([hamadArray[i]], typeof hamadArray[i]);
+}
+
+// looping backwards
+for (let i = hamadArray.length - 1; i >= 0; i--) {
+  console.log(i, hamadArray[i]);
+}
+
+// note: we can use loops inside loops
+
+// while loop
+let rep = 1;
+while (rep <= 10) {
+  console.log(`rep ${rep}`);
+  rep++;
+}
+
+// while loop with a random number as a condition
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log("Loops is goig to end");
+  }
+}
