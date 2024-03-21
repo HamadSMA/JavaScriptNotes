@@ -14,6 +14,9 @@ toLowerCase();
 
 push(); // To add new items to an array
 pop(); // remove last item from an array
+forEach(); // callback function, first argument array element, second argument its index
+filter(); // callback funcrion, filters elements based on a condition then return them in an array
+map(); // callback function, perform work on each array element
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-MATH CHEAT SHEETR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
@@ -35,6 +38,13 @@ Math.log10(); // logrithmic method
 Math.min(9, 8, 7); // returns 7
 Math.max(9, 8, 7); // returns 9.
 Math.sin(), Math.cos(), Math.tan(); // trignomatrics
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-DATA STRUCTURES-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+// Objects: key-value pairs, key must be a string, has inheritance, and a prototype object.
+// Arrays: No key-value pairs. iterable.
+// Maps: key-value pairs, key doesn't have to be a string
+// Sets: a collection of unique values, can accept an array on construction and filter out repeated values
+// Custome data structures can be created in JavaScripts
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-CONDITIONALS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
@@ -325,6 +335,49 @@ hamadObject1.getSumary();
 //   );
 // }
 
+// Meta iterating over objects challenge:
+
+// Task 1
+var dairy = [
+  "cheese",
+  "sour cream",
+  "milk",
+  "yogurt",
+  "ice cream",
+  "milkshake",
+];
+function logDairy() {
+  for (var i of dairy) {
+    console.log(i);
+  }
+}
+logDairy();
+// Task 2
+const animal = {
+  canJump: true,
+};
+
+const bird = Object.create(animal);
+bird.canFly = true;
+bird.hasFeathers = true;
+
+function birdCan() {
+  // iterating using for OF will only show the object's properties
+  for (var key of Object.keys(bird)) {
+    console.log(`${key}: ${bird[key]}`);
+  }
+}
+birdCan();
+
+// Task 3
+function animalCan() {
+  // iterating using for IN will  show the object and the prototype object's properties
+  for (var prop in bird) {
+    console.log(`${prop}: ${bird[prop]}`);
+  }
+}
+animalCan();
+
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-MORE ON LOOPS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
 //creating an object
@@ -372,7 +425,7 @@ for (let i = hamadArray.length - 1; i >= 0; i--) {
   console.log(i, hamadArray[i]);
 }
 
-// note: we can use loops inside loops
+// note: we can also use for of and for in to iterate
 
 // while loop
 let rep = 1;
