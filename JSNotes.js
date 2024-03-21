@@ -18,6 +18,8 @@ forEach(); // callback function, first argument array element, second argument i
 filter(); // callback funcrion, filters elements based on a condition then return them in an array
 map(); // callback function, perform work on each array element
 
+// Note: we can use rest and spread operators to do operations on collections, we can also use rest  for a function parameter when we don't have spicified number of parameters
+
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-MATH CHEAT SHEETR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
 Math.PI; // pi
